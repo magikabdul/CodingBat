@@ -128,7 +128,73 @@ public class WarmUp1 {
         }
     }
 
-    
+    public String notString(String str) {
+
+        if(str.length() < 3) {
+            return "not " + str;
+        }
+        else if(str.substring(0, 3).equals("not")) {
+            return str;
+        }
+        else {
+            return "not " + str;
+        }
+    }
+
+    public String startOz(String str) {
+        String s = "";
+
+        if(str.length() > 0 && str.charAt(0) == 'o') {
+            s = "o";
+        }
+
+        if(str.length() > 1 && str.charAt(1) == 'z') {
+            if(s.length() > 0) {
+                s = s + 'z';
+            }   else {
+                s = "z";
+            }
+
+        }
+
+        return s;
+    }
+
+    public boolean in3050(int a, int b) {
+        if( ( (a >= 30 && a <= 40) && (b >= 30 && b <= 40) ) || ( (a >= 40 && a <= 50) && (b >= 40 && b <= 50) ) ) {
+            return true;
+        }   else {
+            return false;
+        }
+    }
+
+    public boolean makes10(int a, int b) {
+        return (a + b == 10) || a == 10 || b == 10;
+    }
+
+    public String everyNth(String str, int n) {
+        StringBuilder s = new StringBuilder();
+
+        s.append(str.charAt(0));
+
+        for(int i = 1; i < str.length(); i++) {
+            if(i%n == 0) {
+                s.append(str.charAt(i));
+            }
+        }
+
+        return s.toString();
+    }
+
+    public String backAround(String str) {
+        StringBuilder s = new StringBuilder();
+
+        s.append(str.charAt(str.length() - 1));
+        s.append(str.substring(0, str.length()));
+        s.append(str.charAt(str.length() - 1));
+
+        return s.toString();
+    }
 }
 
 
@@ -137,7 +203,7 @@ class Application {
     public static void main(String[] args) {
         WarmUp1 w = new WarmUp1();
 
-        System.out.println(w.front22("do"));
+        System.out.println(w.backAround("b"));
 
     }
 
