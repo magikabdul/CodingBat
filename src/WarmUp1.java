@@ -195,6 +195,33 @@ public class WarmUp1 {
 
         return s.toString();
     }
+
+    public boolean startHi(String str) {
+        if(str.length() > 1) {
+            return str.substring(0,2).equals("hi");
+        }   else {
+            return false;
+        }
+    }
+
+    public int close10(int a, int b) {
+        if( Math.abs( a - 10) == Math.abs(b - 10)) {
+            return 0;
+        }   else if( Math.abs(a - 10) < Math.abs(b - 10)) {
+            return a;
+        }   else {
+            return b;
+        }
+    }
+
+    public String front3(String str) {
+        if(str.length() < 3) {
+            return str.substring(0,str.length()) + str.substring(0,str.length()) + str.substring(0,str.length());
+        }   else {
+            return str.substring(0,3) + str.substring(0,3) + str.substring(0,3);
+        }
+    }
+
 }
 
 
@@ -203,7 +230,7 @@ class Application {
     public static void main(String[] args) {
         WarmUp1 w = new WarmUp1();
 
-        System.out.println(w.backAround("b"));
+        System.out.println(w.front3("qw"));
 
     }
 
