@@ -32,7 +32,22 @@ public class WarmUp2 {
         return count;
     }
 
-    
+    public boolean has271(int[] nums) {
+
+        if(nums.length < 3) {
+            return false;
+        }   else {
+            for (int i = 0; i < nums.length - 2; i++) {
+                if(nums[i] == nums[i+1] - 5) {
+                    if (nums[i] - 1 == nums[i+2] || Math.abs( nums[i+2] - (nums[i] - 1) ) <=  2) {
+                        return true;
+                    }
+                }
+            }
+
+            return false;
+        }
+    }
 }
 
 class App {
@@ -40,7 +55,7 @@ class App {
     public static void main(String[] args) {
         WarmUp2 w = new WarmUp2();
 
-        //System.out.println(w.());
+        System.out.println(w.has271(new int[]{2, 7, 4}));
     }
 
 
