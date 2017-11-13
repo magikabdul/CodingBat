@@ -1,3 +1,5 @@
+package org.cholewa.codingbat.warmup2;
+
 public class WarmUp2 {
 
     public String stringTimes(String str, int n) {

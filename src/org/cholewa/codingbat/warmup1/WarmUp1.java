@@ -1,3 +1,5 @@
+package org.cholewa.codingbat.warmup1;
+
 public class WarmUp1 {
 
     public String missingChar(String str, int n) {
