@@ -189,6 +189,54 @@ public class WarmUp2 {
 
         return false;
     }
+
+    public String stringYak(String str) {
+        StringBuilder stringBuilder = new StringBuilder();
+
+        for (int i = 0; i < str.length(); i++){
+            if (str.substring(i, i + 1).equals("y")){
+                if (i < str.length() - 2){
+                    if (str.substring(i + 2, i + 3).equals("k")) {
+                        i = i + 2;
+                    }   else {
+                        stringBuilder.append(str.substring(i, i + 1));
+                    }
+                }   else {
+                    stringBuilder.append(str.substring(i, i + 1));
+                }
+            }   else {
+                stringBuilder.append(str.substring(i, i + 1));
+            }
+        }
+
+        return stringBuilder.toString();
+    }
+
+    public boolean array123(int[] nums) {
+        for (int i = 0; i < nums.length - 2; i++){
+            if (nums[i] == 1 && nums[i+1] == 2 && nums[i+2] == 3){
+                return true;
+            }
+        }
+
+        return false;
+    }
+
+    public String stringBits(String str) {
+        boolean doReturn = false;
+        StringBuilder stringBuilder = new StringBuilder();
+
+        for (int i = 0; i < str.length(); i++){
+            if(doReturn == false) {
+                doReturn = true;
+                stringBuilder.append(str.substring(i, i + 1));
+            }   else {
+                doReturn = false;
+            }
+        }
+
+        return stringBuilder.toString();
+    }
 }
 
 class App {
@@ -196,7 +244,10 @@ class App {
     public static void main(String[] args) {
         WarmUp2 w = new WarmUp2();
 
-        System.out.println(w.doubleX("axaaxx"));
+        System.out.println(w.stringBits("Hello"));
+        System.out.println(w.stringBits("Hi"));
+        System.out.println(w.stringBits("Heeololeo"));
+        //System.out.println(w.array123(new int[]{}));
     }
 
 
