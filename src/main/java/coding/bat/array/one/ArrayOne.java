@@ -53,4 +53,16 @@ public class ArrayOne {
             return nums[0] + nums[1];
         }
     }
+
+    public static int[] middleWay(int[] a, int[] b) {
+        return new int[]{a[1], b[1]};
+    }
+
+    public static int[] makeEnds(int[] nums) {
+        return new int[]{nums[0], nums[nums.length - 1]};
+    }
+
+    public static boolean has23(int[] nums) {
+        return nums[0] == 2 || nums[1] == 2 || nums[0] == 3 || nums[1] == 3;
+    }
 }

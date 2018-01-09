@@ -1,5 +1,6 @@
 package coding.bat.array.one;
 
+import org.junit.Assert;
 import org.junit.Test;
 
 import static org.junit.Assert.*;
@@ -169,5 +170,55 @@ public class ArrayOneTestSuite {
         assertEquals(3, result1);
         assertEquals(2, result2);
         assertEquals(2, result3);
+    }
+
+    @Test
+    public void testMiddleWay() {
+        //Given
+
+        //When
+        int[] result1 = ArrayOne.middleWay(new int[]{1, 2, 3}, new int[]{4, 5, 6});
+        int[] result2 = ArrayOne.middleWay(new int[]{7, 7, 7}, new int[]{3, 8, 0});
+        int[] result3 = ArrayOne.middleWay(new int[]{5, 2, 9}, new int[]{1, 4, 5});
+
+        //Then
+        Assert.assertEquals(2, result1[0]);
+        Assert.assertEquals(5, result1[1]);
+        Assert.assertEquals(7, result2[0]);
+        Assert.assertEquals(8, result2[1]);
+        Assert.assertEquals(2, result3[0]);
+        Assert.assertEquals(4, result3[1]);
+    }
+
+    @Test
+    public void testMakeEnds() {
+        //Given
+
+        int[] result1 = ArrayOne.makeEnds(new int[]{1, 2, 3});
+        int[] result2 = ArrayOne.makeEnds(new int[]{1, 2, 3, 4});
+        int[] result3 = ArrayOne.makeEnds(new int[]{7, 4, 6, 2});
+
+        //Then
+        Assert.assertEquals(1, result1[0]);
+        Assert.assertEquals(3, result1[1]);
+        Assert.assertEquals(1, result2[0]);
+        Assert.assertEquals(4, result2[1]);
+        Assert.assertEquals(7, result3[0]);
+        Assert.assertEquals(2, result3[1]);
+    }
+
+    @Test
+    public void testHas23() {
+        //Given
+
+        //When
+        boolean result1 = ArrayOne.has23(new int[]{2, 5});
+        boolean result2 = ArrayOne.has23(new int[]{4, 3});
+        boolean result3 = ArrayOne.has23(new int[]{4, 5});
+
+        //Then
+        Assert.assertTrue(result1);
+        Assert.assertTrue(result2);
+        Assert.assertFalse(result3);
     }
 }
