@@ -1,6 +1,8 @@
 package coding.bat.array.one;
 
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 
 public class ArrayOne {
 
@@ -9,11 +11,7 @@ public class ArrayOne {
     }
 
     public static boolean sameFirstLast(int[] nums) {
-        if (nums.length > 0) {
-            return nums[0] == nums[nums.length - 1];
-        } else {
-            return false;
-        }
+        return nums.length > 0 && nums[0] == nums[nums.length - 1];
     }
 
     public static int[] makePi() {
@@ -137,4 +135,73 @@ public class ArrayOne {
 
         return ints;
     }
+
+    public static int[] midThree(int[] nums) {
+        if (nums.length == 3) {
+            return nums;
+        } else {
+            int middlePos = nums.length / 2;
+            return new int[]{nums[middlePos - 1], nums[middlePos], nums[middlePos + 1]};
+        }
+    }
+
+    public static int maxTriple(int[] nums) {
+        int middlePos = nums.length / 2;
+        return Arrays.stream(new int[]{nums[0], nums[middlePos], nums[nums.length - 1]}).max().getAsInt();
+    }
+
+    public static int[] frontPiece(int[] nums) {
+        if (nums.length < 3) {
+            return nums;
+        } else {
+            return new int[]{nums[0], nums[1]};
+        }
+    }
+
+    public static boolean unlucky1(int[] nums) {
+        if (nums.length < 2) {
+            return false;
+        } else if (nums.length == 2) {
+            return nums[0] == 1 && nums[1] == 3;
+        } else {
+            return (nums[0] == 1 && nums[1] == 3)
+                    || (nums[1] == 1 && nums[2] == 3)
+                    || (nums[nums.length - 2] == 1 && nums[nums.length - 1] == 3)
+                    || (nums[nums.length - 3] == 1 && nums[nums.length - 2] == 3);
+        }
+    }
+
+    public static int[] make2(int[] a, int[] b) {
+        List<Integer> list = new ArrayList<>();
+
+        if (a.length == 1) {
+            list.add(a[0]);
+        } else if (a.length > 1) {
+            list.add(a[0]);
+            list.add(a[1]);
+        }
+
+        if (list.size() == 0) {
+            list.add(b[0]);
+            list.add(b[1]);
+        } else if (list.size() == 1) {
+            list.add(b[0]);
+        }
+
+        return new int[]{list.get(0), list.get(1)};
+    }
+
+    public static int[] front11(int[] a, int[] b) {
+        if (a.length > 0 && b.length > 0) {
+            return new int[]{a[0], b[0]};
+        } else if (a.length > 0) {
+            return new int[]{a[0]};
+        } else if (b.length > 0) {
+            return new int[]{b[0]};
+        } else {
+            return a;
+        }
+    }
+
+
 }

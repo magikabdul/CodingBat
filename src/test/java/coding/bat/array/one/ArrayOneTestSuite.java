@@ -393,4 +393,117 @@ public class ArrayOneTestSuite {
         Assert.assertEquals(9, result3[3]);
         Assert.assertEquals(8, result3[4]);
     }
+
+    @Test
+    public void testMidThree() {
+        //Given
+
+        //When
+        int[] result1 = ArrayOne.midThree(new int[]{1, 2, 3, 4, 5});
+        int[] result2 = ArrayOne.midThree(new int[]{8, 6, 7, 5, 3, 0, 9});
+        int[] result3 = ArrayOne.midThree(new int[]{1, 2, 3});
+
+        //Then
+        Assert.assertEquals(2, result1[0]);
+        Assert.assertEquals(3, result1[1]);
+        Assert.assertEquals(4, result1[2]);
+
+        Assert.assertEquals(7, result2[0]);
+        Assert.assertEquals(5, result2[1]);
+        Assert.assertEquals(3, result2[2]);
+
+        Assert.assertEquals(1, result3[0]);
+        Assert.assertEquals(2, result3[1]);
+        Assert.assertEquals(3, result3[2]);
+    }
+
+    @Test
+    public void testMaxTriple() {
+        //Given
+
+        //When
+        int result1 = ArrayOne.maxTriple(new int[]{1, 2, 3});
+        int result2 = ArrayOne.maxTriple(new int[]{1, 5, 3});
+        int result3 = ArrayOne.maxTriple(new int[]{5, 2, 3});
+
+        //Then
+        Assert.assertEquals(3, result1);
+
+        Assert.assertEquals(5, result2);
+
+        Assert.assertEquals(5, result3);
+    }
+
+    @Test
+    public void testFrontPiece() {
+        //Given
+
+        //When
+        int[] result1 = ArrayOne.frontPiece(new int[]{1, 2, 3});
+        int[] result2 = ArrayOne.frontPiece(new int[]{1, 2});
+        int[] result3 = ArrayOne.frontPiece(new int[]{1});
+
+        //Then
+        Assert.assertEquals(1, result1[0]);
+        Assert.assertEquals(2, result1[1]);
+
+        Assert.assertEquals(1, result2[0]);
+        Assert.assertEquals(2, result2[1]);
+
+        Assert.assertEquals(1, result3[0]);
+    }
+
+    @Test
+    public void testUnlucky1() {
+        //Given
+
+        //When
+        boolean result1 = ArrayOne.unlucky1(new int[]{1, 3, 4, 5});
+        boolean result2 = ArrayOne.unlucky1(new int[]{2, 1, 3, 4, 5});
+        boolean result3 = ArrayOne.unlucky1(new int[]{1, 1, 1});
+
+        //Then
+        Assert.assertTrue(result1);
+        Assert.assertTrue(result2);
+        Assert.assertFalse(result3);
+    }
+
+    @Test
+    public void testMake2() {
+        //Given
+
+        //When
+        int[] result1 = ArrayOne.make2(new int[]{4, 5}, new int[]{1, 2, 3});
+        int[] result2 = ArrayOne.make2(new int[]{4}, new int[]{1, 2, 3});
+        int[] result3 = ArrayOne.make2(new int[]{}, new int[]{1, 2});
+
+        //Then
+        Assert.assertEquals(4, result1[0]);
+        Assert.assertEquals(5, result1[1]);
+
+        Assert.assertEquals(4, result2[0]);
+        Assert.assertEquals(1, result2[1]);
+
+        Assert.assertEquals(1, result3[0]);
+        Assert.assertEquals(2, result3[1]);
+    }
+
+    @Test
+    public void testFront11() {
+        //Given
+
+        //When
+        int[] result1 = ArrayOne.front11(new int[]{1, 2, 3}, new int[]{7, 8, 9});
+        int[] result2 = ArrayOne.front11(new int[]{1}, new int[]{2});
+        int[] result3 = ArrayOne.front11(new int[]{1, 7}, new int[]{});
+
+        //Then
+        Assert.assertEquals(1, result1[0]);
+        Assert.assertEquals(7, result1[1]);
+
+        Assert.assertEquals(1, result2[0]);
+        Assert.assertEquals(2, result2[1]);
+
+        Assert.assertEquals(1, result3[0]);
+    }
 }
