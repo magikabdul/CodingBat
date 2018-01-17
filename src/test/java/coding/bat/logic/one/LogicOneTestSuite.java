@@ -140,4 +140,49 @@ public class LogicOneTestSuite {
         Assert.assertTrue(result2);
         Assert.assertFalse(result3);
     }
+
+    @Test
+    public void testMore20() {
+        //Given
+
+        //When
+        boolean result1 = LogicOne.more20(20);
+        boolean result2 = LogicOne.more20(21);
+        boolean result3 = LogicOne.more20(22);
+
+        //Then
+        Assert.assertFalse(result1);
+        Assert.assertTrue(result2);
+        Assert.assertTrue(result3);
+    }
+
+    @Test
+    public void testOld35() {
+        //Given
+
+        //When
+        boolean result1 = LogicOne.old35(3);
+        boolean result2 = LogicOne.old35(10);
+        boolean result3 = LogicOne.old35(15);
+
+        //Then
+        Assert.assertTrue(result1);
+        Assert.assertTrue(result2);
+        Assert.assertFalse(result3);
+    }
+
+    @Test
+    public void testLess20() {
+        //Given
+
+        //When
+        boolean result1 = LogicOne.less20(18);
+        boolean result2 = LogicOne.less20(19);
+        boolean result3 = LogicOne.less20(20);
+
+        //Then
+        Assert.assertTrue(result1);
+        Assert.assertTrue(result2);
+        Assert.assertFalse(result3);
+    }
 }

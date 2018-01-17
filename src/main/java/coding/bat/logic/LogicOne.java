@@ -56,4 +56,16 @@ public class LogicOne {
     public static boolean specialEleven(int n) {
         return n % 11 == 0 || (n - 1) % 11 == 0;
     }
+
+    public static boolean more20(int n) {
+        return n % 20 == 1 || n % 20 == 2;
+    }
+
+    public static boolean old35(int n) {
+        return (n % 3 == 0 && n % 5 != 0) || (n % 3 != 0 && n % 5 == 0);
+    }
+
+    public static boolean less20(int n) {
+        return n % 20 == 18 || n % 20 == 19;
+    }
 }
