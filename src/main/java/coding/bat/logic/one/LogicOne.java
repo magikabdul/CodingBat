@@ -1,4 +1,4 @@
-package coding.bat.logic;
+package coding.bat.logic.one;
 
 public class LogicOne {
     public static boolean cigarParty(int cigars, boolean isWeekend) {

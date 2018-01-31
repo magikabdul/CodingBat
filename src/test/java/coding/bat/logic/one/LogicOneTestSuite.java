@@ -1,6 +1,5 @@
 package coding.bat.logic.one;
 
-import coding.bat.logic.LogicOne;
 import org.junit.Assert;
 import org.junit.Test;
 
