@@ -138,7 +138,7 @@ public class MapTwoTestSuite {
         //Given
         String[] s1 = {"salt", "tea", "soda", "toast"};
         String[] s2 = {"aa", "bb", "cc", "aAA", "cCC", "d"};
-        String[] s3 = {""};
+        String[] s3 = {};
 
         //When
         Map<String, String> map1 = new HashMap<>();
@@ -181,7 +181,29 @@ public class MapTwoTestSuite {
 
         //Then
         Assert.assertEquals(str1, result1);
-//        Assert.assertEquals(str2, result2);
-//        Assert.assertEquals(str3, result3);
+        Assert.assertEquals(str2, result2);
+        Assert.assertEquals(str3, result3);
+    }
+
+    @Test
+    public void testFirstSwap() {
+        //Given
+        String[] s1 = {"ab", "ac"};
+        String[] s2 = {"ax", "bx", "cx", "cy", "by", "ay", "aaa", "azz"};
+        String[] s3 = {"ax", "bx", "ay", "by", "ai", "aj", "bx", "by"};
+
+        //When
+        String[] str1 = {"ac", "ab"};
+        String[] str2 = {"ay", "by", "cy", "cx", "bx", "ax", "aaa", "azz"};
+        String[] str3 = {"ay", "by", "ax", "bx", "ai", "aj", "bx", "by"};
+
+        String[] result1 = mapTwo.firstSwap(s1);
+        String[] result2 = mapTwo.firstSwap(s2);
+        String[] result3 = mapTwo.firstSwap(s3);
+
+        //Then
+        Assert.assertArrayEquals(str1, result1);
+        Assert.assertArrayEquals(str2, result2);
+        Assert.assertArrayEquals(str3, result3);
     }
 }

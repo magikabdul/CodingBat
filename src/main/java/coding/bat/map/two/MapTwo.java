@@ -1,6 +1,5 @@
 package coding.bat.map.two;
 
-import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -74,19 +73,57 @@ public class MapTwo {
     }
 
     public String wordAppend(String[] strings) {
-        StringBuilder sb = new StringBuilder();
+        Map<String, Integer> map = new HashMap<>();
+        String result = "";
 
-        for (String s : strings) {
-            long quantity = Arrays.stream(strings).filter(s1 -> s1.equals(s)).count();
-            if (quantity > 0) {
-                long loopend = quantity / 2;
-                for (int i = 0; i < loopend; i++) {
-                    if (!sb.toString().substring(0, s.length()).equals(s)) {
-                        sb.append(s);
-                    }
+        for (int i = 0; i < strings.length; i++) {
+
+            String key = strings[i];
+
+            if (map.containsKey(key)) {
+                int val = map.get(key);
+                val++;
+                if (val % 2 == 0) {
+                    result += key;
                 }
+                map.put(key, val);
+            } else {
+                map.put(key, 1);
+            }
+
+        }
+
+        return result;
+    }
+
+    public String[] firstSwap(String[] strings) {
+        Map<String, Integer> map = new HashMap<>();
+
+        String[] result = new String[strings.length];
+
+        for (int i = 0; i < strings.length; i++) {
+            if (map.containsKey(strings[i].substring(0, 1))) {
+
+                int position = map.get(strings[i].substring(0, 1));
+
+                if (position > -1) {
+                    result[i] = strings[position];
+                    result[position] = strings[i];
+                    map.put(strings[i].substring(0, 1), -1);
+                } else {
+                    result[i] = strings[i];
+                }
+            } else {
+                map.put(strings[i].substring(0, 1), i);
             }
         }
-        return sb.toString();
+
+        for (int i = 0; i < result.length; i++) {
+            if (result[i] == null) {
+                result[i] = strings[i];
+            }
+        }
+
+        return result;
     }
 }
