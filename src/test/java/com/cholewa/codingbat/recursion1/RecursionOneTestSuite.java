@@ -61,4 +61,26 @@ public class RecursionOneTestSuite {
         Assert.assertEquals(3, fibonacci.calculate(4));
         Assert.assertEquals(21, fibonacci.calculate(8));
     }
+
+    // We have bunnies standing in a line, numbered 1, 2, ... The odd bunnies (1, 3, ..) have the normal 2 ears.
+    // The even bunnies (2, 4, ..) we'll say have 3 ears, because they each have a raised foot.
+    // Recursively return the number of "ears" in the bunny line 1, 2, ... n (without loops or multiplication).
+    //
+    //bunnyEars2(0) → 0
+    //bunnyEars2(1) → 2
+    //bunnyEars2(2) → 5
+
+    @Test
+    public void testBunnyEars2() {
+        //Given
+        BunnyEars2 bunnyEars2 = new BunnyEars2();
+
+        //When
+        Assert.assertEquals(0, bunnyEars2.count(0));
+        Assert.assertEquals(2, bunnyEars2.count(1));
+        Assert.assertEquals(5, bunnyEars2.count(2));
+        Assert.assertEquals(7, bunnyEars2.count(3));
+        Assert.assertEquals(10, bunnyEars2.count(4));
+//        Assert.assertEquals(21, bunnyEars2.count(8));
+    }
 }
